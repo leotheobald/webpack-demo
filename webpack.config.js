@@ -25,20 +25,12 @@ module.exports = {
   },
   module: {
     rules: [
+      // sass preprocess and pass throughb the chain.
       {
-        test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              // you can specify a publicPath here
-              // by default it use publicPath in webpackOptions.output
-              publicPath: ''
-            }
-          },
-          "css-loader"
-        ]
+        test:/\.(s*)css$/,
+        use:['style-loader','css-loader', 'sass-loader']
       },
+      // load any image files included in js.
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
@@ -47,6 +39,7 @@ module.exports = {
       }
     ]
   },
+  // Manage the output of content.
   plugins: [
     new HtmlWebpackPlugin(htmlOptions),
     new MiniCssExtractPlugin({
