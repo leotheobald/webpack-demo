@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-//const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 //const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 //const ImageWebpackLoader = require('image-webpack-loader');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -41,6 +41,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new HtmlWebpackPlugin(htmlOptions),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
