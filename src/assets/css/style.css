@@ -1,3 +1,85 @@
+:root {
+  --border-colour: black;
+  --text-colour: blue;
+  --container-width: 95%;
+  --container-center: 0 auto;
+  --article-elemment-width: 100%;
+  --article-content-width: 100%;
+  --article-aside-width: 100%;
+  --gutter: 0;
+  --h1-colour: darkblue;
+  --article-colour: green;
+  --float-element: inline-block;
+  --none: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .hello {
   color: red;
+}
+
+.container {
+  width: var(--container-width);
+  margin: var(--container-center);
+  border: 1px solid var(--border-colour);
+  padding: 0 10px;
+}
+
+.container header {
+  border: 1px solid var(--border-colour);
+  width: var(--article-element-width);
+  height: auto;
+  padding: 10px 0;
+  margin-bottom: var(--gutter);
+}
+
+.container section.main {
+  display: var(--float-element);
+  float: var(--none, --left);
+  width: var(--article-content-width);
+}
+
+.container aside.sidebar.right {
+  display: var(--float-element);
+  float: var(--none, --right);
+  width: var(--article-aside-width);
+}
+
+.container .sidebar .content,
+.container .main .content {
+  border: 1px solid var(--border-colour);
+}
+
+.container .sidebar .content {
+  margin-left: var(--gutter);
+}
+
+.container .main .content {
+  margin-right: var(--gutter);
+}
+
+.container footer {
+  border: 1px solid var(--border-colour);
+  height: auto;
+  padding: 10px 0;
+  margin-top: var(--gutter);
+  width: var(--artcle-element-width);
+  clear: both;
+}
+
+@media screen and (min-width: 760px) {
+  :root {
+    --container-width: 85%;
+    --border-colour: orange;
+    --article-content-width: 66.666666%;
+    --article-aside-width: 33.333333%;
+    --gutter: 2%;
+    --h1-colour: darkblue;
+    --article-colour: green;
+    --left: left;
+    --right: right;
+  };
 }
