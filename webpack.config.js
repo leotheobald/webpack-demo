@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-//const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 //const ImageWebpackLoader = require('image-webpack-loader');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
@@ -52,4 +52,7 @@ module.exports = {
     //new ImageWebpackLoader(['dist']),
     //new webpack.optimize.ModuleConcatenationPlugin()
   ],
+  devServer: {
+    contentBase: './src'
+  }
 };
