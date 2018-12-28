@@ -17,6 +17,7 @@ let htmlOptions = {
 };
 
 module.exports = {
+  mode: 'development',
   entry: './src/index.js',
   output: {
     filename: './bundle.js',
@@ -36,6 +37,12 @@ module.exports = {
             }
           },
           "css-loader"
+        ]
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader'
         ]
       }
     ]

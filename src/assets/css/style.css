@@ -11,6 +11,8 @@
   --article-colour: green;
   --float-element: inline-block;
   --none: none;
+
+  --indent-size: 10px;
 }
 
 * {
@@ -19,6 +21,7 @@
 
 .hello {
   color: red;
+  background: url('../images/icon.png');
 }
 
 .container {
@@ -33,7 +36,9 @@
   width: var(--article-element-width);
   height: auto;
   padding: 10px 0;
+  margin-top: var(--gutter);
   margin-bottom: var(--gutter);
+  text-indent: var(--indent-size, var(--indent-xl));
 }
 
 .container section.main {
@@ -51,6 +56,7 @@
 .container .sidebar .content,
 .container .main .content {
   border: 1px solid var(--border-colour);
+  text-indent: var(--indent-size, var(--indent-xl));
 }
 
 .container .sidebar .content {
@@ -61,13 +67,19 @@
   margin-right: var(--gutter);
 }
 
+.container footer:before {
+  content: " ";
+  height: 1px;
+  display: block;
+}
 .container footer {
   border: 1px solid var(--border-colour);
   height: auto;
   padding: 10px 0;
   margin-top: var(--gutter);
+  margin-bottom: var(--gutter);
   width: var(--artcle-element-width);
-  clear: both;
+  text-indent: var(--indent-size, var(--indent-xl));
 }
 
 @media screen and (min-width: 760px) {
@@ -81,5 +93,10 @@
     --article-colour: green;
     --left: left;
     --right: right;
-  };
+
+    --indent-xl: calc(2*var(--indent-size));
+    --indent-l: calc(var(--indent-size) + 2px);
+    --indent-s: calc(var(--indent-size) - 2px);
+    --indent-xs: calc(var(--indent-size)/2);
+  }
 }
