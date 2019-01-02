@@ -1,19 +1,7 @@
-:root {
-  --border-colour: black;
-  --text-colour: blue;
-  --container-width: 95%;
-  --container-center: 0 auto;
-  --article-elemment-width: 100%;
-  --article-content-width: 100%;
-  --article-aside-width: 100%;
-  --gutter: 0;
-  --h1-colour: darkblue;
-  --article-colour: green;
-  --float-element: inline-block;
-  --none: none;
+:root {--border-colour: black; --text-colour: blue; --container-width: 95%; --container-center: 0 auto; --article-elemment-width: 100%; --article-content-width: 100%; --article-aside-width: 100%; --gutter: 0; --h1-colour: darkblue; --article-colour: green; --float-element: inline-block; --none: none; --indent-size: 10px;}
 
-  --indent-size: 10px;
-}
+$answer: 42;
+@warn "The Answer to the Ultimate Question of Life, the Universe, and Everything is #{$answer}.";
 
 * {
   box-sizing: border-box;

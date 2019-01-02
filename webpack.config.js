@@ -25,7 +25,7 @@ module.exports = {
   },
   module: {
     rules: [
-      // sass preprocess and pass throughb the chain.
+      // sass preprocess and pass through the chain.
       {
         test:/\.(s*)css$/,
         use:['style-loader','css-loader', 'sass-loader']
